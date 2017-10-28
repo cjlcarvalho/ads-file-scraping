@@ -14,7 +14,7 @@ class Scraper(object):
         crawler = Crawler(self.page)
         
         try:
-            while(True):
+            while True:
                 files = crawler.getFileLinks()
                 for name, link in files:
                     print("Downloading " + name + "...")
@@ -24,7 +24,6 @@ class Scraper(object):
                         for chunk in request.iter_content(chunk_size=1024):
                             if chunk:
                                 f.write(chunk)
-                print("Downloaded.")
                 crawler.nextPage()
         except Exception as e:
             print(e)
