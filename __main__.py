@@ -8,5 +8,6 @@ def main():
     page = input("Select your file page: ")
     scraper = Scraper(page, folder)
     scraper.getFiles()
+    print("Files downloaded.")
     
 main()
