@@ -7,10 +7,13 @@ Scraper dos arquivos das disciplinas do curso de ADS do IFBA Salvador
    
 ## Como usar
 
-- Execute a aplicação, informe o nome do diretório que será criado na pasta atual do aplicativo, que será onde os arquivos devem ser salvos. 
+- Execute a aplicação com:
+    - `python __main__.py`
+
+- Informe o nome do novo diretório onde os arquivos devem ser salvos.
 
 - Informe o file page. Essa informação representa o id da disciplina na wiki, por exemplo: 
 
-    - https://ads.ifba.edu.br/file11 é o link para a página de Banco de Dados, onde o id da mesma é "file11", que é a informação a ser informada como file page.
+    - A página https://ads.ifba.edu.br/file11 possui o file page como "file11".
 
-- Após isso, o script irá baixar todo o conteúdo da página e de seus subdiretórios e salvará dentro do diretório informado.
+- Após isso, o script irá baixar todo o conteúdo da página e de seus subdiretórios e salvará dentro do diretório informado anteriormente.
