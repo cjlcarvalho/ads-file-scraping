@@ -4,6 +4,8 @@ import requests, configs, os
 from Crawler import Crawler
 
 class Scraper(object):
+
+    bar = "\\" if os.name == "nt" else "/"
     
     def __init__(self, page, folder):
         self.page = page
@@ -18,14 +20,14 @@ class Scraper(object):
                 for name, link in files:
                     if "file" in link:
                         print("Entering subfolder " + name + "...")
-                        subfolder = self.folder + "/" + name
+                        subfolder = self.folder + self.bar + name
                         if not os.path.exists(subfolder):
                             os.makedirs(subfolder)
                         scraper = Scraper(link, subfolder)
                         scraper.getFiles()
                     else:
                         print("Downloading " + name + "...")
-                        localFileName = self.folder + "/" + name
+                        localFileName = self.folder + self.bar + name
                         request = requests.get(configs.ADS_SITE + "/" + link, stream=True)
                         with open(localFileName, 'wb') as f:
                             for chunk in request.iter_content(chunk_size=1024):
