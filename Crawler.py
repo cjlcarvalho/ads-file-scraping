@@ -25,7 +25,8 @@ class Crawler(object):
         return result
         
     def nextPage(self):
-        nextPage = self.tree.xpath("//div[@class='clearboth']//ul[@class='pagination']//li[not(@class='disabled')]//a[@class='prevnext next']/@href")
+        nextPage = self.tree.xpath("//div[@class='clearboth']//ul[@class='pagination']" + \
+                                   "//li[not(@class='disabled')]//a[@class='prevnext next']/@href")
         
         if(nextPage):
             self.page = configs.ADS_SITE + nextPage[0]
